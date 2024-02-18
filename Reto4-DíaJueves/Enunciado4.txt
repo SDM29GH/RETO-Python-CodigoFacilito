@@ -1,0 +1,75 @@
+Ya nos encontramos en la recta final de nuestra semana, y lo que haremos ahora, cómo ya es 
+costumbre, será añadir más funcionalidades a nuestro programa.
+
+En el siguiente programa en Python 3.12.2:
+
+print("¿Cuántos usuarios quieres registrar?")
+num_usuarios = int(input())
+identificadores = []  # Almacenará los identificadores de los usuarios
+usuarios = []
+
+for i in range(num_usuarios):
+    print(f"\nRegistro del usuario {i+1}")
+    while True:
+        nombre = input("Nombre(s): ")
+        apellido = input("Apellido(s): ")
+        telefono = input("Número de teléfono: ")
+        correo = input("Correo electrónico: ")
+
+        if len(nombre) < 5 or len(nombre) > 50:
+            print("El nombre debe tener entre 5 y 50 caracteres.")
+            continue
+        if len(apellido) < 5 or len(apellido) > 50:
+            print("El apellido deben tener entre 5 y 50 caracteres.")
+            continue
+        if len(telefono) < 10:
+            print("El número de teléfono debe ser de 10 o mas dígitos.")
+            continue
+        if len(correo) < 5 or len(correo) > 50:
+            print("El correo electrónico debe tener entre 5 y 50 caracteres.")
+            continue
+
+        lista_usuario = [nombre, apellido, telefono, correo]  # Creamos una lista con los datos del usuario
+        usuarios.append(lista_usuario)  # Añadimos la lista a la lista de usuarios
+        
+        id_usuario = i + 1  # Generamos un identificador único para el usuario
+        identificadores.append(id_usuario)  # Añadimos el identificador a la lista
+        print(f"Hola {nombre} {apellido}, tu ID de usuario es {id_usuario}. En breve recibirás un correo a {correo}")
+        break
+
+    print("\nUsuarios registrados:")
+    for lista_usuario in usuarios:
+        print(lista_usuario)
+    
+    print("\nIdentificadores de los usuarios registrados:")
+    for id_usuario in identificadores:
+        print(id_usuario)
+
+Añadir 4 nuevas funcionalidades. Aquí van.
+
+1.- Ahora todos los valores que representan a un usuario: Nombre, apellidos, número de 
+teléfono y correo electrónico deberán almacenarse en un diccionario.
+
+2.- Se añadirá la opción de poder listar el ID de todos los usuarios registrados hasta 
+el momento.
+
+3.- Se añadirá la opción de poder ver la información de un usuario con respecto a un ID. 
+Es decir, el usuario podrá ingresar un ID y a partir de este conocer la información registrada.
+
+4.- Se añadirá la opción de poder editar la información de un usuario con respecto a un ID. 
+Es decir, el usuario podrá ingresar un ID y a partir de este el programa pedirá nuevamente 
+los valores de un registro para actualizarlos.
+
+Estas 3 nuevas opciones deberán ser presentadas al usuario al comienzo del programa, esto 
+con la finalidad que sea el usuario quien defina que quiere hacer justo ahora: añadir 
+nuevos usuario, consultarlos o editarlos.
+
+De igual forma el programa tendrán una quinta opción que le permita la usuario finalizar 
+el programa cuando él lo desee.
+
+Un Tip. Para estas nuevas opciones puedes presentarle a tu usuario un pequeño menú del 
+cual pueda elegir. 
+Por ejemplo opción A.-) registrar nuevos usuarios, opción B.-) listar usuarios, 
+Opción C.-) Editar usuarios y así sucesivamente.
+
+Todo el codigodel programa sin funciones.
